@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+.pnpm-debug.log*
+
+# non-local env files
+.env
+!.env*.example
+
+# typescript
+*.tsbuildinfo
