@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ignore-path .gitignore --fix"
+    "lint": "eslint . --ignore-path .gitignore --fix --max-warnings 0"
   },
   "dependencies": {
     "react": "^18.2.0",
