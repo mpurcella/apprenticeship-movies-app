@@ -1,8 +1,8 @@
 import ButtonLinkPrimary from "./components/button-link-primary/ButtonLinkPrimary";
 import ButtonLinkSecondary from "./components/button-link-secondary/ButtonLinkSecondary";
+import Button from "./components/button/Button";
 import { FaPlay } from "react-icons/fa";
 import { BiMovie } from "react-icons/Bi";
-import ButtonPrimary from "./components/button-primary/ButtonPrimary";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         </li>
       </ul>
       <div className="flex mb-10">
-        <ButtonPrimary endIcon={<FaPlay />}>Button</ButtonPrimary>
+        <Button endIcon={<FaPlay />}>Button</Button>
       </div>
       <h1 className="text-grey-100 text-40">Test Color</h1>
       <h1 className="text-grey-200 text-40">Test Color</h1>
