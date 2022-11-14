@@ -3,6 +3,7 @@ import ButtonLinkSecondary from "./components/button-link-secondary/ButtonLinkSe
 import Button from "./components/button/Button";
 import { FaPlay } from "react-icons/fa";
 import { BiMovie } from "react-icons/Bi";
+import Poster from "./components/poster/Poster";
 
 function App() {
   return (
@@ -37,6 +38,14 @@ function App() {
       <h1 className="text-grey-500 text-40">Test Color</h1>
       <h1 className="text-black text-40">Test Color</h1>
       <h1 className="text-red text-40">Test Color</h1>
+      <div className="w-[300px]">
+        <Poster
+          image={
+            "https://image.tmdb.org/t/p/w780/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg"
+          }
+          alt={"Alt Text"}
+        />
+      </div>
     </div>
   );
 }
