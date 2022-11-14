@@ -1,11 +1,11 @@
 import React from "react";
 
-interface ButtonPrimaryTypes {
+type ButtonTypes = {
   endIcon: React.ReactNode;
   children: React.ReactNode;
-}
+};
 
-const ButtonPrimary = ({ endIcon, children }: ButtonPrimaryTypes) => {
+const Button = ({ endIcon, children }: ButtonTypes) => {
   return (
     <button className="button-primary">
       {children}
@@ -14,4 +14,4 @@ const ButtonPrimary = ({ endIcon, children }: ButtonPrimaryTypes) => {
   );
 };
 
-export default ButtonPrimary;
+export default Button;
