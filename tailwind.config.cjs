@@ -9,8 +9,11 @@ module.exports = {
       white: "#fff",
       black: "#28282B",
       grey: {
-        100: "#696969",
-        200: "#484848",
+        100: "#E8E8E8",
+        200: "#DCDCDC",
+        300: "#BEBEBE",
+        400: "#696969",
+        500: "#484848",
       },
       red: "#FF003F",
     },
@@ -51,12 +54,14 @@ module.exports = {
       32: "2rem",
       36: "2.25rem",
       40: "2.5rem",
+      100: "100%",
     },
     borderRadius: {
       DEFAULT: "24px",
     },
     borderWidth: {
       DEFAULT: "1px",
+      6: "6px",
     },
   },
   plugins: [
@@ -67,6 +72,10 @@ module.exports = {
       };
 
       addComponents({
+        ".button-link-secondary": {
+          "@apply w-100 text-14 text-black bg-grey-100 inline-flex py-12 px-12 ease-out duration-300 hover:text-white hover:bg-black":
+            {},
+        },
         ".button-link-light": {
           ...buttonLinkPrimary,
           "@apply text-black bg-white hover:text-white hover:bg-black": {},
