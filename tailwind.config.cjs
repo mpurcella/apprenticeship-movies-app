@@ -73,7 +73,7 @@ module.exports = {
 
       addComponents({
         ".button-link-secondary": {
-          "@apply w-100 text-14 text-black bg-grey-100 inline-flex py-12 px-12 ease-out duration-300 hover:text-white hover:bg-black":
+          "@apply w-100 text-14 text-black bg-white inline-flex py-12 px-12 ease-out duration-300 hover:bg-grey-100":
             {},
         },
         ".button-link-light": {
