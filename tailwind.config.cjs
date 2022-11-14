@@ -84,6 +84,10 @@ module.exports = {
           ...buttonLinkPrimary,
           "@apply text-white bg-black hover:text-black hover:bg-white": {},
         },
+        ".button-primary": {
+          ...buttonLinkPrimary,
+          "@apply button-link-dark": {},
+        },
       });
     },
   ],
