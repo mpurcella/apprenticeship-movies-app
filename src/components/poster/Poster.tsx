@@ -1,7 +1,7 @@
-interface PosterTypes {
+type PosterTypes = {
   image: string;
   alt: string;
-}
+};
 
 const Poster = ({ image, alt }: PosterTypes) => {
   return (
