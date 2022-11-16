@@ -1,9 +1,9 @@
 import ButtonLinkPrimary from "./components/button-link-primary/ButtonLinkPrimary";
 import ButtonLinkSecondary from "./components/button-link-secondary/ButtonLinkSecondary";
 import Button from "./components/button/Button";
+import Poster from "./components/poster/Poster";
 import { FaPlay } from "react-icons/fa";
 import { BiMovie } from "react-icons/Bi";
-import Poster from "./components/poster/Poster";
 
 function App() {
   return (
