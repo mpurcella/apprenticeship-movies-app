@@ -7,7 +7,7 @@ type ButtonTypes = {
 
 const Button = ({ endIcon, children }: ButtonTypes) => {
   return (
-    <button className="button-primary">
+    <button className="button">
       {children}
       <span className="ml-12">{endIcon}</span>
     </button>
