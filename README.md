@@ -19,3 +19,9 @@
 
 `npm run dev`
 
+## API Access
+
+`cp .env.sample .env`
+
+- Add your API key to `VITE_API_KEY`
+- Add your API access token to `VITE_API_ACCESS_TOKEN`
