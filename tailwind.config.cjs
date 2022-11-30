@@ -2,56 +2,83 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./src/App.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "open-sans": ["Open Sans", "sans-serif"],
+        dosis: ["Dosis", "sans-serif"],
+      },
+    },
     colors: {
       current: "currentColor",
       transparent: "transparent",
-      white: "#FFF",
-      black: "#28282B",
+      white: {
+        100: "#FFFFFF",
+        200: "#F2F2F2",
+      },
+      black: "#131313",
       grey: {
         100: "#E8E8E8",
         200: "#DCDCDC",
         300: "#BEBEBE",
         400: "#696969",
         500: "#484848",
+        600: "#202020",
       },
-      red: "#FF003F",
     },
     fontSize: {
       14: [".875rem"],
+      18: ["1.125rem"],
+      20: ["1.25rem"],
+      24: ["1.5rem"],
     },
     spacing: {
+      0: "0rem",
+      2: ".125rem",
+      3: ".1875rem",
+      8: ".5rem",
       12: ".75rem",
+      20: "1.25rem",
+      28: "1.75rem",
       32: "2rem",
-      100: "100%",
+      36: "2.25rem",
+      48: "3rem",
+      56: "3.5rem",
+      quarter: "25%",
+      full: "100%",
     },
     borderRadius: {
       DEFAULT: "24px",
       8: "8px",
     },
-    borderWidth: {
-      DEFAULT: "1px",
+    screens: {
+      sm: "576px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
   },
   plugins: [
     ({ addComponents }) => {
       const buttonLinkPrimary = {
-        "@apply text-14 inline-flex items-center py-12 px-32 border border-black rounded ease-out duration-300":
+        "@apply inline-flex items-center py-12 px-32 border border-black rounded ease-out duration-300":
           {},
       };
 
       addComponents({
         ".button-link-secondary": {
-          "@apply w-100 text-14 text-black bg-white inline-flex p-12 ease-out duration-300 hover:bg-grey-100":
+          "@apply w-full text-14 text-grey-200 font-normal bg-black inline-flex py-12 px-28 ease-out duration-300 hover:text-white-100 hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
             {},
         },
         ".button-link-light": {
           ...buttonLinkPrimary,
-          "@apply text-black bg-white hover:text-white hover:bg-black": {},
+          "@apply text-black bg-white-200 hover:text-white-200 hover:bg-black":
+            {},
         },
         ".button-link-dark": {
           ...buttonLinkPrimary,
-          "@apply text-white bg-black hover:text-black hover:bg-white": {},
+          "@apply text-white-200 bg-black hover:text-black hover:bg-white-200":
+            {},
         },
         ".button": {
           ...buttonLinkPrimary,
@@ -59,10 +86,21 @@ module.exports = {
         },
       });
     },
+    ({ addUtilities }) => {
+      addUtilities({
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+      });
+    },
     ({ addBase }) => {
       addBase({
         body: {
-          "@apply leading-none antialiased": {},
+          "@apply font-open-sans bg-white-100 leading-none antialiased": {},
         },
       });
     },
