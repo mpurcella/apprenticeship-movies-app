@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof ButtonLinkPrimary> = (args) => (
 
 export const PrimaryLightStart = Template.bind({});
 PrimaryLightStart.args = {
-  link: "#",
+  url: "#",
   children: "ButtonLink",
   startIcon: <FaPlay />,
   styleLight: true,
@@ -22,7 +22,7 @@ PrimaryLightStart.args = {
 
 export const PrimaryLightEnd = Template.bind({});
 PrimaryLightEnd.args = {
-  link: "#",
+  url: "#",
   children: "ButtonLink",
   endIcon: <FaPlay />,
   styleLight: true,
@@ -30,7 +30,7 @@ PrimaryLightEnd.args = {
 
 export const PrimaryDarkStart = Template.bind({});
 PrimaryDarkStart.args = {
-  link: "#",
+  url: "#",
   children: "ButtonLink",
   startIcon: <FaPlay />,
   styleLight: false,
@@ -38,7 +38,7 @@ PrimaryDarkStart.args = {
 
 export const PrimaryDarkEnd = Template.bind({});
 PrimaryDarkEnd.args = {
-  link: "#",
+  url: "#",
   children: "ButtonLink",
   endIcon: <FaPlay />,
   styleLight: false,

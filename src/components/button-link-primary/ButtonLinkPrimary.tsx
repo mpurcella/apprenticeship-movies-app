@@ -1,7 +1,7 @@
 import React from "react";
 
 type ButtonLinkPrimaryTypes = {
-  link: string;
+  url: string;
   children: React.ReactNode;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
@@ -9,7 +9,7 @@ type ButtonLinkPrimaryTypes = {
 };
 
 const ButtonLinkPrimary = ({
-  link,
+  url,
   children,
   startIcon,
   endIcon,
@@ -17,7 +17,7 @@ const ButtonLinkPrimary = ({
 }: ButtonLinkPrimaryTypes) => {
   return (
     <a
-      href={link}
+      href={url}
       className={styleLight ? "button-link-light" : "button-link-dark"}
     >
       {Boolean(startIcon) && <span className="mr-12">{startIcon}</span>}
