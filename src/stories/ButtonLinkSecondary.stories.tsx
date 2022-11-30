@@ -9,12 +9,14 @@ export default {
 } as ComponentMeta<typeof ButtonLinkSecondary>;
 
 const Template: ComponentStory<typeof ButtonLinkSecondary> = (args) => (
-  <ButtonLinkSecondary {...args} />
+  <div className="w-quarter">
+    <ButtonLinkSecondary {...args} />
+  </div>
 );
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  link: "#",
+  url: "#",
   children: "ButtonLink",
   startIcon: <BiMovie />,
 };
