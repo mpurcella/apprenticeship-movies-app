@@ -1,18 +1,20 @@
 import React from "react";
 
 type ButtonLinkSecondaryTypes = {
-  link: string;
+  url: string;
   startIcon: React.ReactNode;
   children: React.ReactNode;
+  onClick: () => void;
 };
 
 const ButtonLinkSecondary = ({
-  link,
+  url,
   startIcon,
   children,
+  onClick,
 }: ButtonLinkSecondaryTypes) => {
   return (
-    <a href={link} className="button-link-secondary">
+    <a href={url} className="button-link-secondary" onClick={onClick}>
       <span className="mr-12">{startIcon}</span>
       {children}
     </a>
