@@ -10,6 +10,11 @@ type SideBarTypes = {
   closeSidebar: () => void;
 };
 
+type GenresTypes = {
+  id: number;
+  name: string;
+};
+
 const staticGenres = [
   {
     name: "Popular",
@@ -28,18 +33,13 @@ const staticGenres = [
   },
 ];
 
-type GenresData = {
-  id: number;
-  name: string;
-};
-
 const Sidebar = ({ isOpen, onClick, closeSidebar }: SideBarTypes) => {
-  const [genres, setGenres] = useState<GenresData[]>([]);
+  const [genres, setGenres] = useState<GenresTypes[]>([]);
 
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const resp = await axiosClient.get<{ genres: GenresData[] }>(
+        const resp = await axiosClient.get<{ genres: GenresTypes[] }>(
           "/genre/movie/list"
         );
         const data = await resp.data;
