@@ -8,7 +8,14 @@ export default {
 } as ComponentMeta<typeof HamburgerButton>;
 
 const Template: ComponentStory<typeof HamburgerButton> = (args) => (
-  <HamburgerButton {...args} />
+  <>
+    <p>
+      Shrink viewport window to &#60; 1024px to show hamburger button or use the
+      toggle button above.
+    </p>
+    <br />
+    <HamburgerButton {...args} />
+  </>
 );
 
 export const Primary = Template.bind({});
