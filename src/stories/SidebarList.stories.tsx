@@ -1,5 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import ButtonLinkSecondary from "../components/button-link-secondary/ButtonLinkSecondary";
 import SidebarList from "../components/sidebar-list/SidebarList";
+import { FaRegCircle } from "react-icons/fa";
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
@@ -15,19 +17,24 @@ const Template: ComponentStory<typeof SidebarList> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: "Popular",
-  genreList: [
-    {
-      id: 1,
-      name: "Action",
-    },
-    {
-      id: 2,
-      name: "Comedy",
-    },
-    {
-      id: 3,
-      name: "Drama",
-    },
-  ],
+  label: "Genres",
+  children: (
+    <>
+      <li>
+        <ButtonLinkSecondary url="#" startIcon={<FaRegCircle />}>
+          Action
+        </ButtonLinkSecondary>
+      </li>
+      <li>
+        <ButtonLinkSecondary url="#" startIcon={<FaRegCircle />}>
+          Comedy
+        </ButtonLinkSecondary>
+      </li>
+      <li>
+        <ButtonLinkSecondary url="#" startIcon={<FaRegCircle />}>
+          Drama
+        </ButtonLinkSecondary>
+      </li>
+    </>
+  ),
 };
