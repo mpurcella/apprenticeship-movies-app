@@ -43,6 +43,7 @@ module.exports = {
       36: "2.25rem",
       48: "3rem",
       56: "3.5rem",
+      280: "17.5rem",
       quarter: "25%",
       full: "100%",
     },
@@ -50,12 +51,11 @@ module.exports = {
       DEFAULT: "24px",
       8: "8px",
     },
+    scale: {
+      102: "1.02",
+    },
     screens: {
-      sm: "576px",
-      md: "768px",
       lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
     },
   },
   plugins: [
@@ -67,7 +67,7 @@ module.exports = {
 
       addComponents({
         ".button-link-secondary": {
-          "@apply w-full text-14 text-grey-200 font-normal bg-black inline-flex py-12 px-28 ease-out duration-300 hover:text-white-100 hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
+          "@apply w-full text-14 text-grey-200 font-normal bg-black inline-flex py-12 px-28 ease-out hover:text-white-100 hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
             {},
         },
         ".button-link-light": {
@@ -88,12 +88,11 @@ module.exports = {
     },
     ({ addUtilities }) => {
       addUtilities({
-        ".no-scrollbar::-webkit-scrollbar": {
-          display: "none",
-        },
-        ".no-scrollbar": {
-          "-ms-overflow-style": "none",
-          "scrollbar-width": "none",
+        ".scrollbar-none": {
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
         },
       });
     },
