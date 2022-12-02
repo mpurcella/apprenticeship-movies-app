@@ -4,7 +4,7 @@ type ButtonLinkSecondaryTypes = {
   url: string;
   startIcon: React.ReactNode;
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const ButtonLinkSecondary = ({
