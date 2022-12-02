@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Temp from "./Temp";
 
 const Discover = lazy(async () => await import("./discover/Discover"));
 const Genres = lazy(async () => await import("./genres/Genres"));
@@ -18,7 +17,6 @@ function Pages() {
           <Route path="/movie" element={<Movie />} />
           <Route path="/actor" element={<Actor />} />
         </Routes>
-        <Temp />
       </Suspense>
     </>
   );
