@@ -3,17 +3,16 @@ import HamburgerButton from "../hamburger-button/HamburgerButton";
 import Sidebar from "../sidebar/Sidebar";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(() => window.innerWidth > 1023);
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((currentIsOpen) => !currentIsOpen);
   };
 
   const closeSidebar = () => {
     setIsOpen(false);
   };
 
-  // Needed?
   useEffect(() => {
     const showSidebar = () => {
       if (window.innerWidth > 1023) {
@@ -33,11 +32,7 @@ const Header = () => {
   return (
     <header className="p-20">
       <HamburgerButton onClick={handleIsOpen} />
-      <Sidebar
-        isOpen={isOpen}
-        onClick={handleIsOpen}
-        closeSidebar={closeSidebar}
-      />
+      <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
     </header>
   );
 };
