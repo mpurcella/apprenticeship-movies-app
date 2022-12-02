@@ -2,11 +2,16 @@ import { useState, useEffect } from "react";
 import { axiosClient } from "../../utils/axios";
 import classNames from "classnames";
 import SidebarList from "../sidebar-list/SidebarList";
-import { FaTimes } from "react-icons/fa";
+import {
+  FaTimes,
+  FaHeart,
+  FaChartBar,
+  FaCalendarAlt,
+  FaRegCircle,
+} from "react-icons/fa";
 
 type SideBarTypes = {
   isOpen: boolean;
-  onClick: () => void;
   closeSidebar: () => void;
 };
 
@@ -15,65 +20,111 @@ type GenresTypes = {
   name: string;
 };
 
-const staticGenres = [
+const discoverItems = [
   {
-    name: "Popular",
-    link: "#",
-    id: 1,
+    label: "Popular",
+    url: "/movies/popular",
+    icon: <FaHeart />,
   },
   {
-    name: "Top Rated",
-    link: "#",
-    id: 2,
+    label: "Top Rated",
+    url: "/movies/top-rated",
+    icon: <FaChartBar />,
   },
   {
-    name: "Upcoming",
-    link: "#",
-    id: 3,
+    label: "Upcoming",
+    url: "/movies/upcoming",
+    icon: <FaCalendarAlt />,
   },
 ];
 
-const Sidebar = ({ isOpen, onClick, closeSidebar }: SideBarTypes) => {
+const Sidebar = ({ isOpen, closeSidebar }: SideBarTypes) => {
   const [genres, setGenres] = useState<GenresTypes[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const fetchGenres = async () => {
+      setIsLoading(true);
+
       try {
         const resp = await axiosClient.get<{ genres: GenresTypes[] }>(
-          "/genre/movie/list"
+          "/genre/movie/list",
+          { signal }
         );
-        const data = await resp.data;
-        setGenres(data.genres);
+        setGenres(resp.data.genres);
       } catch (err) {
-        console.log(err);
+        setError(err as Error);
+      } finally {
+        setIsLoading(false);
       }
     };
+
     fetchGenres().catch(console.error);
+
+    return () => {
+      controller.abort();
+    };
   }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error !== null) {
+    return <div>It broke... {error.message}</div>;
+  }
 
   return (
     <div
       className={classNames(
-        "w-[280px] bg-black pt-48 pb-36 fixed top-0 bottom-0 transition-all linear duration-500 no-scrollbar::-webkit-scrollbar no-scrollbar overflow-y-scroll lg:left-0",
+        "w-280 bg-black pt-48 pb-36 fixed top-0 bottom-0 transition-all linear duration-500 scrollbar-none overflow-y-scroll",
         {
           "left-0 shadow-lg shadow-black/95": isOpen,
-          "-left-[280px]": !isOpen,
+          "-left-280": !isOpen,
         }
       )}
     >
       <button
         type="button"
         className="text-20 text-grey-300 absolute top-8 right-8 ease-out duration-200 hover:text-white-100 lg:hidden"
-        onClick={onClick}
+        onClick={closeSidebar}
       >
         <FaTimes />
       </button>
+
       <div className="space-y-56">
-        <SidebarList genreList={staticGenres} closeNav={closeSidebar}>
-          Discover
+        <SidebarList label="Discover">
+          {discoverItems.map((item) => {
+            return (
+              <SidebarList.Item
+                key={item.label}
+                url={item.url}
+                icon={item.icon}
+                onClick={closeSidebar}
+              >
+                {item.label}
+              </SidebarList.Item>
+            );
+          })}
         </SidebarList>
-        <SidebarList genreList={genres} closeNav={closeSidebar}>
-          Genres
+
+        <SidebarList label="Genres">
+          {genres.map((genre) => {
+            return (
+              <SidebarList.Item
+                key={genre.id}
+                url={`/genres/${genre.name}`}
+                icon={<FaRegCircle />}
+                onClick={closeSidebar}
+              >
+                {genre.name}
+              </SidebarList.Item>
+            );
+          })}
         </SidebarList>
       </div>
     </div>
