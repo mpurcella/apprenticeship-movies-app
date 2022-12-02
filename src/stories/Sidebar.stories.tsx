@@ -14,6 +14,5 @@ const Template: ComponentStory<typeof Sidebar> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   isOpen: true,
-  onClick: () => null,
   closeSidebar: () => null,
 };
