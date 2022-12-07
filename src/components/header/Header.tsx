@@ -2,11 +2,31 @@ import { useEffect, useState } from "react";
 import HamburgerButton from "../hamburger-button/HamburgerButton";
 import Sidebar from "../sidebar/Sidebar";
 
+function useMediaQuery(mq: string) {
+  const [mql] = useState(() => window.matchMedia(mq));
+  const [matches, setMatches] = useState(mql.matches);
+
+  useEffect(() => {
+    const onChange = (e: MediaQueryListEvent) => {
+      setMatches(e.matches);
+    };
+
+    mql.addEventListener("change", onChange);
+
+    return () => {
+      mql.removeEventListener("change", onChange);
+    };
+  }, [mql]);
+
+  return matches;
+}
+
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(() => window.innerWidth > 1023);
+  const isDesktop = useMediaQuery("(min-width: 992px)");
+  const [isOpen, setIsOpen] = useState(() => false);
 
   const handleIsOpen = () => {
-    setIsOpen((currentIsOpen) => !currentIsOpen);
+    setIsOpen((currentIsDesktop) => !currentIsDesktop);
   };
 
   const closeSidebar = () => {
@@ -14,25 +34,15 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const showSidebar = () => {
-      if (window.innerWidth > 1023) {
-        setIsOpen(true);
-      } else {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", showSidebar);
-
-    return () => {
-      window.removeEventListener("resize", showSidebar);
-    };
-  }, []);
+    if (!isDesktop) {
+      setIsOpen(false);
+    }
+  }, [isDesktop]);
 
   return (
-    <header className="p-20">
+    <header className="w-full fixed top-0 bg-white-100 shadow-xl shadow-black/15 lg:bg-transparent p-20 z-50 lg:p-0">
       <HamburgerButton onClick={handleIsOpen} />
-      <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
+      <Sidebar isOpen={isDesktop || isOpen} closeSidebar={closeSidebar} />
     </header>
   );
 };
