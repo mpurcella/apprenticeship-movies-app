@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof MovieCard>;
 
 const Template: ComponentStory<typeof MovieCard> = (args) => (
-  <div className="flex">
+  <div className="flex w-quarter">
     <MovieCard {...args} />
   </div>
 );
