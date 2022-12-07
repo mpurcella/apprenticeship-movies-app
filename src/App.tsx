@@ -1,11 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
 import Pages from "./pages/Pages";
+import { StoreWrapper } from "./store/StoreWrapper";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Pages />
-    </BrowserRouter>
+    <StoreWrapper>
+      <BrowserRouter>
+        <Pages />
+      </BrowserRouter>
+    </StoreWrapper>
   );
 }
 
