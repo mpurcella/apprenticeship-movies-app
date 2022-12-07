@@ -20,9 +20,9 @@ const ButtonLinkPrimary = ({
       href={url}
       className={styleLight ? "button-link-light" : "button-link-dark"}
     >
-      {Boolean(startIcon) && <span className="mr-12">{startIcon}</span>}
+      {Boolean(startIcon) && <span className="text-14 mr-12">{startIcon}</span>}
       {children}
-      {Boolean(endIcon) && <span className="ml-12">{endIcon}</span>}
+      {Boolean(endIcon) && <span className="text-14 ml-12">{endIcon}</span>}
     </a>
   );
 };
