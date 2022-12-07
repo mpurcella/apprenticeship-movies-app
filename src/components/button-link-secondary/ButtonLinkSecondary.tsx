@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 type ButtonLinkSecondaryTypes = {
   url: string;
@@ -14,10 +15,17 @@ const ButtonLinkSecondary = ({
   onClick,
 }: ButtonLinkSecondaryTypes) => {
   return (
-    <a href={url} className="button-link-secondary" onClick={onClick}>
+    <NavLink
+      to={url}
+      className={({ isActive }) =>
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+        isActive ? "button-link-secondary active" : "button-link-secondary"
+      }
+      onClick={onClick}
+    >
       <span className="mr-12">{startIcon}</span>
       {children}
-    </a>
+    </NavLink>
   );
 };
 
