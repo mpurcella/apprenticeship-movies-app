@@ -14,7 +14,7 @@ const StarRating = ({ rating }: starRatingTypes) => {
       // If remainder >= 1, push filled stars
       stars.push(
         <FaStar
-          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200"
+          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:group-focus:block lg:hidden lg:group-hover:block"
           key={i}
         />
       );
@@ -23,7 +23,7 @@ const StarRating = ({ rating }: starRatingTypes) => {
       // If remainder > 0 but < 1, push half stars
       stars.push(
         <FaStarHalfAlt
-          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200"
+          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:group-focus:block lg:hidden lg:group-hover:block"
           key={i}
         />
       );
@@ -32,14 +32,14 @@ const StarRating = ({ rating }: starRatingTypes) => {
       // Else push outline stars for remaining loop iterations
       stars.push(
         <FaRegStar
-          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200"
+          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:group-focus:block lg:hidden lg:group-hover:block"
           key={i}
         />
       );
     }
   }
 
-  return <div className="flex">{stars}</div>;
+  return <span className="flex">{stars}</span>;
 };
 
 export default StarRating;
