@@ -66,8 +66,6 @@ export function StoreWrapper({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  console.log(isLoadingConfig, isLoadingGenres, genres, config);
-
   if (isLoadingConfig || isLoadingGenres) {
     return <div>Loading... </div>;
   }

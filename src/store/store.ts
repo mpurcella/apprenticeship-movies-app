@@ -12,5 +12,5 @@ export const StoreCtx = createContext<Store>({
 });
 
 export function useStore() {
-  return useContext(StoreCtx);
+  return useContext(StoreCtx); // Grab the data from StoreCtx.Provider's state
 }
