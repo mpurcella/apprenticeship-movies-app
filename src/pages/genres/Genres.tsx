@@ -5,10 +5,11 @@ import { Movie } from "../../types/movies";
 import { useStore } from "../../store/store";
 import { CanceledError } from "axios";
 import MovieList from "../../components/movie-list/MovieList";
+import MovieLayout from "../../components/movie-layout/MovieLayout";
 
 const Genres = () => {
-  const { genre } = useParams(); // 1
-  const { config, genres } = useStore(); // 2
+  const { genre } = useParams();
+  const { config, genres } = useStore();
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoadingMovies, setIsLoadingMovies] = useState(false);
   const [error, setError] = useState<Error | null>(null);
@@ -58,13 +59,12 @@ const Genres = () => {
     return <div>It broke...{error.message}</div>;
   }
 
+  console.log(genre);
+
   return (
-    <div className="flex flex-col items-center px-48 pt-102 pb-68 lg:py-56 lg:ml-260">
-      <h1 className="inline-block text-20 text-white-200 bg-black uppercase font-semibold text-center mb-36 px-8 py-4">
-        {genre}
-      </h1>
+    <MovieLayout label={genre}>
       <MovieList movies={movies} baseUrl={config.baseUrl} />
-    </div>
+    </MovieLayout>
   );
 };
 
