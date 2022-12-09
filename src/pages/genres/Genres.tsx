@@ -52,14 +52,12 @@ const Genres = () => {
   }, [genre, genres]);
 
   if (isLoadingMovies) {
-    return <div>Loading...</div>;
+    return <div>Loading movies</div>;
   }
 
   if (error !== null) {
-    return <div>It broke...{error.message}</div>;
+    return <div>Oops...Something went wrong</div>;
   }
-
-  console.log(genre);
 
   return (
     <MovieLayout label={genre}>

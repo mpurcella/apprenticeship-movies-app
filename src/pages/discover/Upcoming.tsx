@@ -44,15 +44,15 @@ const Popular = () => {
   }, []);
 
   if (isLoadingMovies) {
-    return <div>Loading...</div>;
+    return <div>Loading movies</div>;
   }
 
   if (error !== null) {
-    return <div>It broke...{error.message}</div>;
+    return <div>Oops...Something went wrong</div>;
   }
 
   return (
-    <MovieLayout label="Upcoming Movies">
+    <MovieLayout label="Upcoming">
       <MovieList movies={movies} baseUrl={config.baseUrl} />
     </MovieLayout>
   );
