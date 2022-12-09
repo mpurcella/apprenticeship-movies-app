@@ -37,7 +37,7 @@ function Pages() {
           <Route
             path="/discover/upcoming"
             element={
-              <Suspense fallback={<div>Loading top rated movies...</div>}>
+              <Suspense fallback={<div>Loading upcoming movies...</div>}>
                 <Upcoming />
               </Suspense>
             }
@@ -45,7 +45,7 @@ function Pages() {
           <Route
             path="/genres/:genre"
             element={
-              <Suspense fallback={<div>Loading genres..</div>}>
+              <Suspense fallback={<div>Loading genres...</div>}>
                 <Genres />
               </Suspense>
             }
