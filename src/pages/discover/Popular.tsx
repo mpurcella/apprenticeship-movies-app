@@ -4,6 +4,7 @@ import MovieList from "../../components/movie-list/MovieList";
 import { Movie } from "../../types/movies";
 import { useStore } from "../../store/store";
 import { CanceledError } from "axios";
+import MovieLayout from "../../components/movie-layout/MovieLayout";
 
 const Popular = () => {
   const { config } = useStore();
@@ -51,12 +52,9 @@ const Popular = () => {
   }
 
   return (
-    <div className="flex flex-col items-center px-48 pt-102 pb-68 lg:py-56 lg:ml-260">
-      <h1 className="inline-block text-20 text-white-200 bg-black uppercase font-semibold text-center mb-36 px-8 py-4">
-        Popular Movies
-      </h1>
+    <MovieLayout label="Popular Movies">
       <MovieList movies={movies} baseUrl={config.baseUrl} />
-    </div>
+    </MovieLayout>
   );
 };
 
