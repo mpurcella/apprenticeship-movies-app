@@ -10,6 +10,9 @@ module.exports = {
       opacity: {
         15: ".15",
       },
+      aspectRatio: {
+        "2/3": "2 / 3",
+      },
     },
     colors: {
       current: "currentColor",
@@ -109,7 +112,8 @@ module.exports = {
 
       addBase({
         body: {
-          "@apply font-open-sans bg-white-100 leading-none antialiased": {},
+          "@apply font-open-sans text-black bg-white-100 leading-none antialiased":
+            {},
         },
       });
     },
