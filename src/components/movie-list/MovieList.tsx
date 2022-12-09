@@ -7,8 +7,6 @@ type MovieListTypes = {
 };
 
 const MovieList = ({ movies, baseUrl }: MovieListTypes) => {
-  console.log(movies);
-
   return (
     <>
       <ul className="grid grid-cols-1 gap-36 sm:grid-cols-2 md:grid-cols-3 sm:gap-28 lg:grid-cols-2 xl:grid-cols-3 ">
