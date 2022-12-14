@@ -87,7 +87,7 @@ const MovieInfo = ({
           </div>
           <div className="flex justify-between mb-56">
             {voteAverage === 0 ? (
-              <span className="text-14">Not Rated</span>
+              <span className="text-14 text-grey-500">Not Rated</span>
             ) : (
               <StarRating
                 starRatingClassName="text-grey-500 mx-2"
@@ -99,7 +99,7 @@ const MovieInfo = ({
                 if (i === 0 && Boolean(language.english_name)) {
                   return (
                     <li
-                      className="list-none text-14"
+                      className="list-none text-14 text-grey-500"
                       key={language.english_name}
                     >
                       {language.english_name}
@@ -108,7 +108,10 @@ const MovieInfo = ({
                   );
                 } else if (i === 0 && Boolean(language.name)) {
                   return (
-                    <li className="list-none text-14" key={language.name}>
+                    <li
+                      className="list-none text-14 text-grey-500"
+                      key={language.name}
+                    >
                       {language.name}
                       <span className="ml-8">/</span>
                     </li>
@@ -118,11 +121,13 @@ const MovieInfo = ({
                 }
               })}
               {Boolean(runtime) && (
-                <span className="uppercase text-14">
+                <span className="uppercase text-14 text-grey-500">
                   {runtime} Min.<span className="ml-8">/</span>
                 </span>
               )}
-              <span className="text-14">{releaseDate.slice(0, 4)}</span>
+              <span className="text-14 text-grey-500">
+                {releaseDate.slice(0, 4)}
+              </span>
             </div>
           </div>
           <div className="mb-36">
