@@ -1,4 +1,5 @@
 export type Config = { baseUrl: string };
+
 export type SpokenLanguage = {
   english_name: string;
   name: string;
@@ -49,8 +50,8 @@ export type MovieDetails = {
     results: Array<{
       id: number;
       key: string;
-      name: string;
       site: string;
+      type: string;
     }>;
   };
   vote_average: number;
