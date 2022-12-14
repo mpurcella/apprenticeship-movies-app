@@ -94,10 +94,8 @@ Primary.args = {
   runtime: 93,
   spokenLanguages: [
     {
+      english_name: "English",
       name: "English",
-    },
-    {
-      name: "Spanish",
     },
   ],
   tagline: "In a galaxy far far away...",
