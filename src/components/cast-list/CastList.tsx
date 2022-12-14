@@ -22,7 +22,7 @@ const CastList = ({ cast, baseUrl }: CastListTypes) => {
               src={
                 item.profile_path === null
                   ? missingPoster
-                  : `${baseUrl}w780/${item.profile_path}`
+                  : `${baseUrl}w780${item.profile_path}`
               }
               alt={item.name}
               className="w-full h-full object-cover object-center rounded-50 border border-grey-200"

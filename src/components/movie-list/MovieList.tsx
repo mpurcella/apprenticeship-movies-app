@@ -17,7 +17,7 @@ const MovieList = ({ movies, baseUrl }: MovieListTypes) => {
                 imageUrl={
                   movie.poster_path === null
                     ? null
-                    : `${baseUrl}w780/${movie.poster_path}`
+                    : `${baseUrl}w780${movie.poster_path}`
                 }
                 url={`/movie/${movie.id}`}
                 title={movie.title}
