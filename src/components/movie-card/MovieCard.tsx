@@ -2,7 +2,7 @@ import Poster from "../poster/Poster";
 import StarRating from "../star-rating/StarRating";
 
 type MovieCardTypes = {
-  imageUrl: string;
+  imageUrl: string | null;
   url: string;
   title: string;
   alt: string;

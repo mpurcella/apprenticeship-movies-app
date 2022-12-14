@@ -1,6 +1,5 @@
 import { Movie } from "../../types/movies";
 import MovieCard from "../movie-card/MovieCard";
-import missingposter from "../../images/missingposter.jpg";
 
 type MovieListTypes = {
   movies: Movie[];
@@ -17,7 +16,7 @@ const MovieList = ({ movies, baseUrl }: MovieListTypes) => {
               <MovieCard
                 imageUrl={
                   movie.poster_path === null
-                    ? missingposter
+                    ? null
                     : `${baseUrl}w780/${movie.poster_path}`
                 }
                 url={`/movie/${movie.id}`}
