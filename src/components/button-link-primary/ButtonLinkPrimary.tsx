@@ -19,6 +19,8 @@ const ButtonLinkPrimary = ({
     <a
       href={url}
       className={styleLight ? "button-link-light" : "button-link-dark"}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {Boolean(startIcon) && <span className="text-14 mr-12">{startIcon}</span>}
       {children}
