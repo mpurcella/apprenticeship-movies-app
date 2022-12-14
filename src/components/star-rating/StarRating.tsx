@@ -2,9 +2,10 @@ import { FaRegStar, FaStarHalfAlt, FaStar } from "react-icons/fa";
 
 type starRatingTypes = {
   rating: number;
+  starRatingClassName: string;
 };
 
-const StarRating = ({ rating }: starRatingTypes) => {
+const StarRating = ({ rating, starRatingClassName }: starRatingTypes) => {
   const stars: React.ReactNode[] = [];
   // Variable that is set to a rating that has been rounded to the nearest whole number and then divided by 2.
   let remainder = Math.round(rating) / 2;
@@ -12,30 +13,15 @@ const StarRating = ({ rating }: starRatingTypes) => {
   for (let i = 0; i < 5; i++) {
     if (remainder >= 1) {
       // If remainder >= 1, push filled stars
-      stars.push(
-        <FaStar
-          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:group-focus:block lg:hidden lg:group-hover:block"
-          key={i}
-        />
-      );
+      stars.push(<FaStar className={starRatingClassName} key={i} />);
       remainder--;
     } else if (remainder > 0) {
       // If remainder > 0 but < 1, push half stars
-      stars.push(
-        <FaStarHalfAlt
-          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:group-focus:block lg:hidden lg:group-hover:block"
-          key={i}
-        />
-      );
+      stars.push(<FaStarHalfAlt className={starRatingClassName} key={i} />);
       remainder = 0;
     } else {
       // Else push outline stars for remaining loop iterations
-      stars.push(
-        <FaRegStar
-          className="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:group-focus:block lg:hidden lg:group-hover:block"
-          key={i}
-        />
-      );
+      stars.push(<FaRegStar className={starRatingClassName} key={i} />);
     }
   }
 
