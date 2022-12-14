@@ -39,6 +39,7 @@ export type MovieDetails = {
   release_date: string;
   runtime: number | null;
   spoken_languages: Array<{
+    english_name: string;
     name: string;
   }>;
   tagline: string | null;
