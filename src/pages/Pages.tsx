@@ -50,7 +50,14 @@ function Pages() {
               </Suspense>
             }
           />
-          <Route path="/movie/:id" element={<Movie />} />
+          <Route
+            path="/movie/:id"
+            element={
+              <Suspense fallback={<div>Loading movie...</div>}>
+                <Movie />
+              </Suspense>
+            }
+          />
           <Route path="/actor" element={<Actor />} />
           <Route path="/not-found" element={<div>Page not found.</div>} />
           <Route path="*" element={<Navigate replace to="/not-found" />} />
