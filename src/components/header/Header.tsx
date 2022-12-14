@@ -40,7 +40,7 @@ const Header = () => {
   }, [isDesktop]);
 
   return (
-    <header className="w-full fixed top-0 bg-white-100 shadow-xl shadow-black/15 lg:bg-transparent p-20 z-50 lg:p-0">
+    <header className="w-full fixed top-0 bg-white shadow-xl shadow-black/15 lg:bg-transparent p-20 z-50 lg:p-0">
       <HamburgerButton onClick={handleIsOpen} />
       <Sidebar isOpen={isDesktop || isOpen} closeSidebar={closeSidebar} />
     </header>

@@ -47,7 +47,7 @@ const Sidebar = ({ isOpen, closeSidebar }: SideBarTypes) => {
     >
       <button
         type="button"
-        className="text-20 text-grey-300 absolute top-8 right-8 ease-out duration-200 hover:text-white-100 lg:hidden"
+        className="text-20 text-grey-300 absolute top-8 right-8 ease-out duration-200 hover:text-white lg:hidden"
         onClick={closeSidebar}
         aria-label="Close"
       >
