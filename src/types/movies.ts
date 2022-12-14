@@ -1,4 +1,8 @@
 export type Config = { baseUrl: string };
+export type SpokenLanguage = {
+  english_name: string;
+  name: string;
+};
 
 export type Genre = {
   id: number;
@@ -38,10 +42,7 @@ export type MovieDetails = {
   };
   release_date: string;
   runtime: number | null;
-  spoken_languages: Array<{
-    english_name: string;
-    name: string;
-  }>;
+  spoken_languages: SpokenLanguage[];
   tagline: string | null;
   title: string;
   videos: {
