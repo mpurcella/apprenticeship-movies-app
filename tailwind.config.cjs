@@ -17,10 +17,7 @@ module.exports = {
     colors: {
       current: "currentColor",
       transparent: "transparent",
-      white: {
-        100: "#FFFFFF",
-        200: "#F2F2F2",
-      },
+      white: "#F2F2F2",
       black: "#131313",
       grey: {
         100: "#E8E8E8",
@@ -44,6 +41,7 @@ module.exports = {
       4: ".25rem",
       8: ".5rem",
       12: ".75rem",
+      16: "1rem",
       20: "1.25rem",
       28: "1.75rem",
       32: "2rem",
@@ -61,6 +59,7 @@ module.exports = {
       DEFAULT: "24px",
       0: "0px",
       8: "8px",
+      50: "50%",
     },
     scale: {
       102: "1.02",
@@ -82,16 +81,18 @@ module.exports = {
       addComponents({
         ".button-link-light": {
           ...buttonRoundBase,
-          "@apply text-black bg-white-200 hover:text-white-200 hover:bg-black":
-            {},
+          "@apply text-black bg-white hover:text-white hover:bg-black": {},
         },
         ".button-link-dark": {
           ...buttonRoundBase,
-          "@apply text-white-200 bg-black hover:text-black hover:bg-white-200":
-            {},
+          "@apply text-white bg-black hover:text-black hover:bg-white": {},
         },
         ".button-link-secondary": {
-          "@apply w-full text-14 text-grey-200 font-normal bg-black inline-flex py-12 px-28 ease-out hover:text-white-100 hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
+          "@apply w-full text-14 text-grey-200 font-normal bg-black inline-flex py-12 px-28 ease-out hover:text-white hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
+            {},
+        },
+        ".button-link-tertiary": {
+          "@apply text-14 text-grey-400 underline underline-offset-2 ease-out duration-300 hover:text-black":
             {},
         },
         ".button-light": {
@@ -113,7 +114,7 @@ module.exports = {
 
       addBase({
         body: {
-          "@apply font-open-sans text-black bg-white-100 leading-none antialiased":
+          "@apply font-open-sans text-black bg-white leading-none antialiased":
             {},
         },
       });
