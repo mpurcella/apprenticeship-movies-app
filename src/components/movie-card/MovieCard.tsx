@@ -17,10 +17,19 @@ const MovieCard = ({ imageUrl, url, title, alt, rating }: MovieCardTypes) => {
     >
       <Poster imageUrl={imageUrl} alt={alt} />
       <div className="flex flex-col items-center px-12 py-20 space-y-12 lg:space-y-20 lg:w-full lg:h-full lg:absolute lg:justify-center lg:top-0 lg:left-0">
-        <p className="text-16 font-light leading-tight text-center ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:text-20 lg:hidden lg:group-hover:block lg:group-focus:block">
+        <p className="text-16 font-light leading-tight text-center ease-out duration-200 group-hover:text-white group-focus:text-white lg:text-20 lg:hidden lg:group-hover:block lg:group-focus:block">
           {title}
         </p>
-        <StarRating rating={rating} />
+        {rating === 0 ? (
+          <span className="text-black font-light mx-2 ease-out duration-200 group-hover:text-white group-focus:text-white lg:group-focus:block lg:hidden lg:group-hover:block">
+            Not Rated
+          </span>
+        ) : (
+          <StarRating
+            starRatingClassName="text-grey-500 mx-2 ease-out duration-200 group-hover:text-white group-focus:text-white lg:group-focus:block lg:hidden lg:group-hover:block"
+            rating={rating}
+          />
+        )}
       </div>
     </a>
   );
