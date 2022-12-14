@@ -16,7 +16,7 @@ type SidebarListItemProps = {
 const SidebarList = ({ label, children }: SidebarListProps) => {
   return (
     <div>
-      <h3 className="font-dosis text-18 text-white-200 font-semibold uppercase mb-20 pl-28">
+      <h3 className="font-dosis text-18 text-white font-semibold uppercase mb-20 pl-28">
         {label}
       </h3>
       <nav>
