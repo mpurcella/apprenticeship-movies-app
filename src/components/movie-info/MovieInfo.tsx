@@ -37,6 +37,7 @@ type MovieInfoTypes = {
   releaseDate: string;
   runtime: number | null;
   spokenLanguages: Array<{
+    english_name: string;
     name: string;
   }>;
   tagline: string | null;
@@ -93,10 +94,19 @@ const MovieInfo = ({
                 rating={voteAverage}
               />
             )}
-
             <div className="flex space-x-8">
               {spokenLanguages.map((language, i) => {
-                if (i === 0) {
+                if (i === 0 && Boolean(language.english_name)) {
+                  return (
+                    <li
+                      className="list-none text-14"
+                      key={language.english_name}
+                    >
+                      {language.english_name}
+                      <span className="ml-8">/</span>
+                    </li>
+                  );
+                } else if (i === 0 && Boolean(language.name)) {
                   return (
                     <li className="list-none text-14" key={language.name}>
                       {language.name}
