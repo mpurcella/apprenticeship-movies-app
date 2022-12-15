@@ -13,6 +13,9 @@ module.exports = {
       aspectRatio: {
         "2/3": "2 / 3",
       },
+      maxWidth: {
+        400: "25rem",
+      },
     },
     colors: {
       current: "currentColor",
@@ -33,6 +36,8 @@ module.exports = {
       18: ["1.125rem"],
       20: ["1.25rem"],
       24: ["1.5rem"],
+      32: ["2rem"],
+      40: ["2.5rem"],
     },
     spacing: {
       0: "0rem",
@@ -46,20 +51,24 @@ module.exports = {
       28: "1.75rem",
       32: "2rem",
       36: "2.25rem",
+      40: "2.5rem",
       44: "2.75rem",
       48: "3rem",
       56: "3.5rem",
       68: "4.25rem",
       102: "6.375rem",
+      108: "6.75rem",
+      132: "8.25rem",
       260: "16.25rem",
       quarter: "25%",
+      35: "35%",
+      65: "65%",
       full: "100%",
     },
     borderRadius: {
       DEFAULT: "24px",
       0: "0px",
       8: "8px",
-      50: "50%",
     },
     scale: {
       102: "1.02",
@@ -67,8 +76,8 @@ module.exports = {
     screens: {
       sm: "576px",
       md: "768px",
-      lg: "992px",
-      xl: "1200px",
+      lg: "1024px",
+      xl: "1280px",
     },
   },
   plugins: [
@@ -88,7 +97,7 @@ module.exports = {
           "@apply text-white bg-black hover:text-black hover:bg-white": {},
         },
         ".button-link-secondary": {
-          "@apply w-full text-14 text-grey-200 font-normal bg-black inline-flex py-12 px-28 ease-out hover:text-white hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
+          "@apply w-full text-grey-200 font-light bg-black inline-flex py-12 px-28 ease-out hover:text-white hover:bg-grey-600 focus:outline-none focus:bg-grey-600":
             {},
         },
         ".button-link-tertiary": {
