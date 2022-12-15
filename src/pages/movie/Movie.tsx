@@ -63,8 +63,6 @@ const Movie = () => {
     return null;
   }
 
-  console.log(movie);
-
   return (
     <MovieLayout label={null}>
       <MovieInfo
