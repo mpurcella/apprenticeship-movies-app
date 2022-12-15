@@ -87,7 +87,7 @@ const MovieInfo = ({
     <div className="divide-y-2 divide-grey-100">
       <div
         className={classNames(
-          "flex flex-col lg:space-x-44 pt-40 pb-68 xl:flex-row",
+          "flex flex-col pb-68 lg:pt-40 xl:flex-row xl:space-x-44",
           {
             "pb-0":
               recommendations.results.length === 0 && credits.cast.length === 0,
@@ -166,8 +166,7 @@ const MovieInfo = ({
               <p className="leading-normal">{overview}</p>
             </div>
           )}
-
-          <div className="flex flex-wrap justify-center gap-20 lg:space-x-20">
+          <div className="flex flex-wrap justify-center gap-20">
             {homepage === null || homepage === "" ? null : (
               <ButtonLinkPrimary
                 url={homepage}
@@ -215,7 +214,7 @@ const MovieInfo = ({
             "pt-68 pb-40": recommendations.results.length === 0,
           })}
         >
-          <h3 className="text-24 lg:text-32 font-bold uppercase mb-44">
+          <h3 className="text-24 lg:text-32 font-light uppercase mb-44">
             Top Cast:
           </h3>
           <div className="flex flex-col items-center">
@@ -232,7 +231,7 @@ const MovieInfo = ({
       )}
       {recommendations.results.length === 0 ? null : (
         <div className="pt-68 lg:pb-40">
-          <h2 className="text-24 lg:text-32 font-bold uppercase mb-44">
+          <h2 className="text-24 lg:text-32 font-light uppercase mb-44">
             Recommended Movies
           </h2>
           <MovieList movies={recommendations.results} baseUrl={baseUrl} />
