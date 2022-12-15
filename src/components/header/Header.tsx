@@ -22,7 +22,7 @@ function useMediaQuery(mq: string) {
 }
 
 const Header = () => {
-  const isDesktop = useMediaQuery("(min-width: 992px)");
+  const isDesktop = useMediaQuery("(min-width: 1023px)");
   const [isOpen, setIsOpen] = useState(() => false);
 
   const handleIsOpen = () => {
