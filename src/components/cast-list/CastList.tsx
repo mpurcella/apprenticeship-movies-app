@@ -1,23 +1,30 @@
-import missingPoster from "../../images/missingposter.jpg";
+import classNames from "classnames";
+import missingPoster from "../../images/missing-poster.jpg";
 
 type CastListTypes = {
   cast: Array<{
+    character: string;
     name: string;
     id: number;
     profile_path: string | null;
   }>;
   baseUrl: string;
+  imdbId: string | null;
 };
 
-const CastList = ({ cast, baseUrl }: CastListTypes) => {
+const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
   return (
-    <ul className="flex flex-wrap space-x-8">
-      {cast.slice(0, 6).map((item) => {
+    <ul
+      className={classNames(
+        "grid grid-cols-1 mb-56 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-44",
+        {
+          "mb-0": imdbId === null,
+        }
+      )}
+    >
+      {cast.slice(0, 5).map((item) => {
         return (
-          <li
-            className="max-w-[75px] max-h-[75px] group relative"
-            key={item.id}
-          >
+          <li key={item.id}>
             <img
               src={
                 item.profile_path === null
@@ -25,8 +32,12 @@ const CastList = ({ cast, baseUrl }: CastListTypes) => {
                   : `${baseUrl}w780${item.profile_path}`
               }
               alt={item.name}
-              className="w-full h-full object-cover object-center rounded-50 border border-grey-200"
+              className="w-full object-cover object-center mb-8 rounded-8 shadow-lg shadow-black-30 aspect-2/3"
             />
+            <span className="block text-center mb-8">{item.name}</span>
+            <span className="text-14 text-grey-500 block text-center">
+              {item.character}
+            </span>
           </li>
         );
       })}
