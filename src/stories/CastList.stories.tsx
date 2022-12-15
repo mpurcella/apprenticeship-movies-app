@@ -18,31 +18,37 @@ Primary.args = {
       name: "Test",
       id: 1,
       profile_path: null,
+      character: "The Protagonist",
     },
     {
       name: "Test",
       id: 2,
       profile_path: null,
+      character: "The Protagonist",
     },
     {
       name: "Test",
       id: 3,
       profile_path: null,
+      character: "The Protagonist",
     },
     {
       name: "Test",
       id: 4,
       profile_path: null,
+      character: "The Protagonist",
     },
     {
       name: "Test",
       id: 5,
       profile_path: null,
+      character: "The Protagonist",
     },
     {
       name: "Test",
       id: 6,
       profile_path: null,
+      character: "The Protagonist",
     },
   ],
 };
