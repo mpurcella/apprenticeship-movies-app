@@ -20,6 +20,7 @@ export type Movie = {
 export type MovieDetails = {
   credits: {
     cast: Array<{
+      character: string;
       name: string;
       id: number;
       profile_path: string | null;
