@@ -207,9 +207,7 @@ const MovieInfo = ({
             "pt-68 pb-40": recommendations.results.length === 0,
           })}
         >
-          <h3 className="text-24 lg:text-32 font-light uppercase mb-44">
-            Top Cast:
-          </h3>
+          <h3 className="text-24 font-bold uppercase mb-44">Top Cast:</h3>
           <div className="flex flex-col items-center">
             <CastList cast={credits.cast} baseUrl={baseUrl} imdbId={imdbId} />
             {imdbId === null ? null : (
@@ -224,7 +222,7 @@ const MovieInfo = ({
       )}
       {recommendations.results.length === 0 ? null : (
         <div className="pt-68">
-          <h2 className="text-24 lg:text-32 font-light uppercase mb-44">
+          <h2 className="text-24 font-bold uppercase mb-44">
             Recommended Movies
           </h2>
           <MovieList movies={recommendations.results} baseUrl={baseUrl} />
