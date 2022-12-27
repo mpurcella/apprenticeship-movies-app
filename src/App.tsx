@@ -1,13 +1,11 @@
-import { BrowserRouter } from "react-router-dom";
-import Pages from "./pages/Pages";
+import { RouterProvider } from "react-router-dom";
 import { StoreWrapper } from "./store/StoreWrapper";
+import pages from "./pages/Pages";
 
 function App() {
   return (
     <StoreWrapper>
-      <BrowserRouter>
-        <Pages />
-      </BrowserRouter>
+      <RouterProvider router={pages} />
     </StoreWrapper>
   );
 }
