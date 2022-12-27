@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ButtonLinkSecondary from "../components/button-link-secondary/ButtonLinkSecondary";
-import { BiMovie } from "react-icons/bi";
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
@@ -18,5 +17,4 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   url: "#",
   children: "ButtonLink",
-  startIcon: <BiMovie />,
 };
