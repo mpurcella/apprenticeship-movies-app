@@ -86,13 +86,10 @@ const MovieInfo = ({
   return (
     <div className="divide-y-2 divide-grey-100">
       <div
-        className={classNames(
-          "flex flex-col pb-68 lg:pt-40 xl:flex-row xl:space-x-44",
-          {
-            "pb-0":
-              recommendations.results.length === 0 && credits.cast.length === 0,
-          }
-        )}
+        className={classNames("flex flex-col pb-68 xl:flex-row xl:space-x-44", {
+          "pb-0":
+            recommendations.results.length === 0 && credits.cast.length === 0,
+        })}
       >
         <div className="flex justify-center mb-68 xl:mb-0 xl:w-35">
           {posterPath === null ? (
@@ -129,14 +126,10 @@ const MovieInfo = ({
                 </span>
               )}
               {Boolean(runtime) && (
-                <span className="uppercase text-14 text-grey-500">
-                  <span className="mr-8">/</span>
-                  {runtime} Min.
-                </span>
+                <span className="text-14 text-grey-500">{runtime} Min.</span>
               )}
               {Boolean(releaseDate) && (
                 <span className="text-14 text-grey-500">
-                  <span className="mr-8">/</span>
                   {releaseDate.slice(0, 4)}
                 </span>
               )}
@@ -166,7 +159,7 @@ const MovieInfo = ({
               <p className="leading-normal">{overview}</p>
             </div>
           )}
-          <div className="flex flex-wrap justify-center gap-20">
+          <div className="flex flex-wrap justify-center xl:justify-start gap-20">
             {homepage === null || homepage === "" ? null : (
               <ButtonLinkPrimary
                 url={homepage}
@@ -230,7 +223,7 @@ const MovieInfo = ({
         </div>
       )}
       {recommendations.results.length === 0 ? null : (
-        <div className="pt-68 lg:pb-40">
+        <div className="pt-68">
           <h2 className="text-24 lg:text-32 font-light uppercase mb-44">
             Recommended Movies
           </h2>
