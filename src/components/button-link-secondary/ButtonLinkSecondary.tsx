@@ -1,28 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type ButtonLinkSecondaryTypes = {
   url: string;
-  startIcon: React.ReactNode;
   children: React.ReactNode;
   onClick?: () => void;
 };
 
 const ButtonLinkSecondary = ({
   url,
-  startIcon,
   children,
   onClick,
 }: ButtonLinkSecondaryTypes) => {
   return (
-    <Link
+    <NavLink
       to={url}
-      className="button-link-secondary flex items-center"
+      className={({ isActive }) =>
+        isActive
+          ? "button-link-secondary border-b-red"
+          : "button-link-secondary"
+      }
       onClick={onClick}
     >
-      <span className="mr-12 text-14">{startIcon}</span>
       {children}
-    </Link>
+    </NavLink>
   );
 };
 
