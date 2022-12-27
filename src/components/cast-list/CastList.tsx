@@ -16,7 +16,7 @@ const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
   return (
     <ul
       className={classNames(
-        "grid grid-cols-1 mb-56 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-44",
+        "grid grid-cols-1 mb-56 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-36",
         {
           "mb-0": imdbId === null,
         }
