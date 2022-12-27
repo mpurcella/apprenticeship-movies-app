@@ -1,17 +1,18 @@
+import { FiMenu, FiX } from "react-icons/fi";
+
 type HamburgerButtonTypes = {
+  isNavOpen: boolean;
   onClick: () => void;
 };
 
-const HamburgerButton = ({ onClick }: HamburgerButtonTypes) => {
+const HamburgerButton = ({ onClick, isNavOpen }: HamburgerButtonTypes) => {
   return (
     <button
-      className="w-32 h-28 flex flex-col justify-around lg:hidden"
+      className="text-32 text-white-200 z-30 lg:hidden outline-none focus-visible:outline-1 focus-visible:outline-red focus-visible:rounded-2"
       onClick={onClick}
       aria-label="Navigation Menu"
     >
-      <span className="w-full h-3 bg-black"></span>
-      <span className="w-full h-3 bg-black"></span>
-      <span className="w-full h-3 bg-black"></span>
+      {isNavOpen ? <FiX /> : <FiMenu />}
     </button>
   );
 };
