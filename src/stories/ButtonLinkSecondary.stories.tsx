@@ -8,9 +8,7 @@ export default {
 } as ComponentMeta<typeof ButtonLinkSecondary>;
 
 const Template: ComponentStory<typeof ButtonLinkSecondary> = (args) => (
-  <div className="w-quarter">
-    <ButtonLinkSecondary {...args} />
-  </div>
+  <ButtonLinkSecondary {...args} />
 );
 
 export const Secondary = Template.bind({});
