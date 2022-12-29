@@ -14,15 +14,75 @@ const Template: ComponentStory<typeof Header> = () => (
       genres: [
         {
           id: 1,
-          name: "Action",
+          name: "Genre",
         },
         {
           id: 2,
-          name: "Comedy",
+          name: "Genre",
         },
         {
           id: 3,
-          name: "Drama",
+          name: "Genre",
+        },
+        {
+          id: 4,
+          name: "Genre",
+        },
+        {
+          id: 5,
+          name: "Genre",
+        },
+        {
+          id: 6,
+          name: "Genre",
+        },
+        {
+          id: 7,
+          name: "Genre",
+        },
+        {
+          id: 8,
+          name: "Genre",
+        },
+        {
+          id: 9,
+          name: "Genre",
+        },
+        {
+          id: 10,
+          name: "Genre",
+        },
+        {
+          id: 11,
+          name: "Genre",
+        },
+        {
+          id: 12,
+          name: "Genre",
+        },
+        {
+          id: 13,
+          name: "Genre",
+        },
+        {
+          id: 14,
+          name: "Genre",
+        },
+        {
+          id: 15,
+          name: "Genre",
+        },
+        {
+          id: 16,
+          name: "Genre",
+        },
+        {
+          id: 17,
+          name: "Genre",
+        },
+        {
+          id: 18,
+          name: "Genre",
         },
       ],
       config: {
