@@ -4,11 +4,17 @@ import MovieCard from "../movie-card/MovieCard";
 type MovieListTypes = {
   movies: Movie[];
   baseUrl: string;
+  label?: string;
 };
 
-const MovieList = ({ movies, baseUrl }: MovieListTypes) => {
+const MovieList = ({ movies, baseUrl, label }: MovieListTypes) => {
   return (
-    <>
+    <section>
+      {label === undefined ? null : (
+        <h1 className="text-24 text-black uppercase font-extrabold flex justify-center mb-40 md:text-28">
+          {label} Movies
+        </h1>
+      )}
       <ul className="grid grid-cols-1 gap-36 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {movies.map((movie) => {
           return (
@@ -28,7 +34,7 @@ const MovieList = ({ movies, baseUrl }: MovieListTypes) => {
           );
         })}
       </ul>
-    </>
+    </section>
   );
 };
 
