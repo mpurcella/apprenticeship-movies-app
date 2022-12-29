@@ -13,8 +13,8 @@ const Template: ComponentStory<typeof Poster> = (args) => (
   </div>
 );
 
-export const Image = Template.bind({});
-Image.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   imageUrl: "https://image.tmdb.org/t/p/w780/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg",
   alt: "Alt Text",
 };
