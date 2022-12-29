@@ -32,7 +32,7 @@ const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
                   : `${baseUrl}w780${item.profile_path}`
               }
               alt={item.name}
-              className="w-full object-cover object-center mb-8 shadow-lg shadow-black-30 aspect-2/3"
+              className="w-full object-cover object-center mb-8 shadow-lg shadow-black/30 aspect-2/3"
             />
             <span className="block text-center mb-8">{item.name}</span>
             <span className="text-14 text-grey-500 block text-center">
