@@ -7,6 +7,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Header from "../components/header/Header";
+import Loading from "../components/loading/Loading";
 import Home from "./home/Home";
 
 const Popular = lazy(async () => await import("./discover/Popular"));
@@ -14,7 +15,6 @@ const TopRated = lazy(async () => await import("./discover/TopRated"));
 const Upcoming = lazy(async () => await import("./discover/Upcoming"));
 const Genres = lazy(async () => await import("./genres/Genres"));
 const Movie = lazy(async () => await import("./movie/Movie"));
-const Actor = lazy(async () => await import("./actor/Actor"));
 
 const pages = createBrowserRouter(
   createRoutesFromElements(
@@ -23,7 +23,7 @@ const pages = createBrowserRouter(
       <Route
         path="/discover/popular"
         element={
-          <Suspense fallback={<div>Loading popular movies...</div>}>
+          <Suspense fallback={<Loading />}>
             <Popular />
           </Suspense>
         }
@@ -31,7 +31,7 @@ const pages = createBrowserRouter(
       <Route
         path="/discover/top-rated"
         element={
-          <Suspense fallback={<div>Loading top rated movies...</div>}>
+          <Suspense fallback={<Loading />}>
             <TopRated />
           </Suspense>
         }
@@ -39,7 +39,7 @@ const pages = createBrowserRouter(
       <Route
         path="/discover/upcoming"
         element={
-          <Suspense fallback={<div>Loading upcoming movies...</div>}>
+          <Suspense fallback={<Loading />}>
             <Upcoming />
           </Suspense>
         }
@@ -47,7 +47,7 @@ const pages = createBrowserRouter(
       <Route
         path="/genres/:genre"
         element={
-          <Suspense fallback={<div>Loading genres...</div>}>
+          <Suspense fallback={<Loading />}>
             <Genres />
           </Suspense>
         }
@@ -55,12 +55,11 @@ const pages = createBrowserRouter(
       <Route
         path="/movie/:id"
         element={
-          <Suspense fallback={<div>Loading movie...</div>}>
+          <Suspense fallback={<Loading />}>
             <Movie />
           </Suspense>
         }
       />
-      <Route path="/actor" element={<Actor />} />
       <Route path="/not-found" element={<div>Page not found</div>} />
       <Route path="*" element={<Navigate replace to="/not-found" />} />
     </Route>
