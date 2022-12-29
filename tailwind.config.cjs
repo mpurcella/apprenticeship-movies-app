@@ -136,9 +136,6 @@ module.exports = {
             display: "none",
           },
         },
-        ".genre-list-transition": {
-          transition: "border-color .2s ease-out, font-weight .15s ease-out",
-        },
       });
 
       addBase({
