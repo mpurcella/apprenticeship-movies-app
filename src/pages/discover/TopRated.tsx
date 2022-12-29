@@ -44,7 +44,7 @@ const TopRated = () => {
   }, []);
 
   if (isLoadingMovies) {
-    return <div>Loading movies</div>;
+    return null;
   }
 
   if (error !== null) {
@@ -52,8 +52,8 @@ const TopRated = () => {
   }
 
   return (
-    <MovieLayout label="Top Rated">
-      <MovieList movies={movies} baseUrl={config.baseUrl} />
+    <MovieLayout>
+      <MovieList movies={movies} baseUrl={config.baseUrl} label="Top Rated" />
     </MovieLayout>
   );
 };

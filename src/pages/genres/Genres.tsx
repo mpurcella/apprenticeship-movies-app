@@ -52,7 +52,7 @@ const Genres = () => {
   }, [genre, genres]);
 
   if (isLoadingMovies) {
-    return <div>Loading movies</div>;
+    return null;
   }
 
   if (error !== null) {
@@ -60,8 +60,8 @@ const Genres = () => {
   }
 
   return (
-    <MovieLayout label={genre}>
-      <MovieList movies={movies} baseUrl={config.baseUrl} />
+    <MovieLayout>
+      <MovieList movies={movies} baseUrl={config.baseUrl} label={genre} />
     </MovieLayout>
   );
 };
