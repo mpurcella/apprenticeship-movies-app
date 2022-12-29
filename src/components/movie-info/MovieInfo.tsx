@@ -85,13 +85,13 @@ const MovieInfo = ({
 
   return (
     <div className="divide-y-2 divide-grey-100">
-      <div
+      <section
         className={classNames("flex flex-col pb-68 xl:flex-row xl:space-x-44", {
           "pb-0":
             recommendations.results.length === 0 && credits.cast.length === 0,
         })}
       >
-        <div className="flex justify-center mb-68 xl:mb-0 xl:w-35">
+        <div className="flex justify-center mb-68 xl:justify-start xl:mb-0 xl:w-35">
           {posterPath === null ? (
             <Poster imageUrl={missingPoster} alt={title} />
           ) : (
@@ -200,9 +200,9 @@ const MovieInfo = ({
               })}
           </div>
         </div>
-      </div>
+      </section>
       {credits.cast.length === 0 ? null : (
-        <div
+        <section
           className={classNames("py-68", {
             "pt-68 pb-40": recommendations.results.length === 0,
           })}
@@ -218,15 +218,15 @@ const MovieInfo = ({
               </ButtonLinkTertiary>
             )}
           </div>
-        </div>
+        </section>
       )}
       {recommendations.results.length === 0 ? null : (
-        <div className="pt-68">
+        <section className="pt-68">
           <h2 className="text-24 font-bold uppercase mb-44">
             Recommended Movies
           </h2>
           <MovieList movies={recommendations.results} baseUrl={baseUrl} />
-        </div>
+        </section>
       )}
     </div>
   );
