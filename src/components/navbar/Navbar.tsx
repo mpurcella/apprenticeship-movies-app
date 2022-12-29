@@ -74,8 +74,8 @@ const Navbar = ({
                       to={`/genres/${genre.name}`}
                       className={({ isActive }) =>
                         isActive
-                          ? "font-dosis text-white-200 font-semibold uppercase leading-normal py-2 px-4 outline-none focus-visible:outline-1 focus-visible:outline-red"
-                          : "font-dosis text-white-200 font-light uppercase leading-normal genre-list-transition py-2 px-4 outline-none hover:font-semibold focus:font-semibold focus-visible:outline-1 focus-visible:outline-red"
+                          ? "text-white-200 font-semibold uppercase leading-normal py-2 px-4 outline-none focus-visible:outline-1 focus-visible:outline-red"
+                          : "text-white-200 font-light uppercase leading-normal duration-200 ease-out py-2 px-4 outline-none hover:font-semibold focus:font-semibold focus-visible:outline-1 focus-visible:outline-red"
                       }
                       onClick={() => {
                         closeGenreList();
