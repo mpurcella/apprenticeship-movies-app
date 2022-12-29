@@ -16,7 +16,7 @@ const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
   return (
     <ul
       className={classNames(
-        "grid grid-cols-1 mb-56 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-36",
+        "grid grid-cols-1 mb-56 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-36",
         {
           "mb-0": imdbId === null,
         }
@@ -32,7 +32,7 @@ const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
                   : `${baseUrl}w780${item.profile_path}`
               }
               alt={item.name}
-              className="w-full object-cover object-center mb-8 rounded-8 shadow-lg shadow-black-30 aspect-2/3"
+              className="w-full object-cover object-center mb-8 shadow-lg shadow-black-30 aspect-2/3"
             />
             <span className="block text-center mb-8">{item.name}</span>
             <span className="text-14 text-grey-500 block text-center">
