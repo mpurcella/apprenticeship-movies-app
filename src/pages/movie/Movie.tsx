@@ -52,7 +52,7 @@ const Movie = () => {
   }, [id]);
 
   if (isLoadingMovie) {
-    return <div>Loading movie</div>;
+    return null;
   }
 
   if (error !== null || id === undefined) {
@@ -64,7 +64,7 @@ const Movie = () => {
   }
 
   return (
-    <MovieLayout label={null}>
+    <MovieLayout>
       <MovieInfo
         baseUrl={config.baseUrl}
         credits={movie.credits}
