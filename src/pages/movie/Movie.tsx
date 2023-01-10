@@ -66,7 +66,7 @@ const Movie = () => {
   return (
     <MovieLayout>
       <MovieInfo
-        baseUrl={config.baseUrl}
+        baseImageUrl={config.baseImageUrl}
         credits={movie.credits}
         genres={movie.genres}
         homepage={movie.homepage}
