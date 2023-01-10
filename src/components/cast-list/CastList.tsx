@@ -8,11 +8,11 @@ type CastListTypes = {
     id: number;
     profile_path: string | null;
   }>;
-  baseUrl: string;
+  baseImageUrl: string;
   imdbId: string | null;
 };
 
-const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
+const CastList = ({ cast, baseImageUrl, imdbId }: CastListTypes) => {
   return (
     <ul
       className={classNames(
@@ -29,7 +29,7 @@ const CastList = ({ cast, baseUrl, imdbId }: CastListTypes) => {
               src={
                 item.profile_path === null
                   ? missingPoster
-                  : `${baseUrl}w780${item.profile_path}`
+                  : `${baseImageUrl}w780${item.profile_path}`
               }
               alt={item.name}
               className="w-full object-cover object-center mb-8 shadow-lg shadow-black/30 aspect-2/3"

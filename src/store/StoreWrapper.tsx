@@ -46,7 +46,7 @@ export function StoreWrapper({ children }: { children: React.ReactNode }) {
         const resp = await axiosClient.get<{
           images: { secure_base_url: string };
         }>("/configuration", { signal });
-        setConfig({ baseUrl: resp.data.images.secure_base_url });
+        setConfig({ baseImageUrl: resp.data.images.secure_base_url });
       } catch (err) {
         if (!(err instanceof CanceledError)) {
           setErrorConfig(err as Error);
