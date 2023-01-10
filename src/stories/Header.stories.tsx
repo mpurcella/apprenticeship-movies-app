@@ -86,7 +86,7 @@ const Template: ComponentStory<typeof Header> = () => (
         },
       ],
       config: {
-        baseUrl: "",
+        baseImageUrl: "",
       },
     }}
   >
