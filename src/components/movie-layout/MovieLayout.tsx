@@ -5,7 +5,11 @@ type MovieLayoutTypes = {
 };
 
 const MovieLayout = ({ children }: MovieLayoutTypes) => {
-  return <main className="px-20 py-68 md:px-68">{children}</main>;
+  return (
+    <main className="flex flex-col gap-44 px-20 py-68 md:px-68">
+      {children}
+    </main>
+  );
 };
 
 export default MovieLayout;
