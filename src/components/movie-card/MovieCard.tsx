@@ -17,7 +17,7 @@ const MovieCard = ({ imageUrl, url, title, alt, rating }: MovieCardTypes) => {
     >
       <Poster imageUrl={imageUrl} alt={alt} />
       <div className="flex flex-col items-center p-20 space-y-12 lg:space-y-20 lg:w-full lg:h-full lg:absolute lg:justify-center lg:top-0 lg:left-0">
-        <p className="text-16 font-light leading-tight text-center ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:text-20 lg:hidden lg:group-hover:block lg:group-focus:block">
+        <p className="font-light leading-tight text-center ease-out duration-200 group-hover:text-white-200 group-focus:text-white-200 lg:text-20 lg:hidden lg:group-hover:block lg:group-focus:block">
           {title}
         </p>
         {rating === 0 ? (
