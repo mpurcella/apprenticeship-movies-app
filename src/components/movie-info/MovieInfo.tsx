@@ -12,7 +12,7 @@ import { SpokenLanguage } from "../../types/movies";
 import classNames from "classnames";
 
 type MovieInfoTypes = {
-  baseUrl: string;
+  baseImageUrl: string;
   credits: {
     cast: Array<{
       character: string;
@@ -30,12 +30,14 @@ type MovieInfoTypes = {
   overview: string | null;
   posterPath: string | null;
   recommendations: {
+    page: number;
     results: Array<{
       id: number;
       poster_path: string | null;
       title: string;
       vote_average: number;
     }>;
+    total_pages: number;
   };
   releaseDate: string;
   runtime: number | null;
@@ -65,7 +67,7 @@ const getSpokenLanguage = (spokenLanguages: SpokenLanguage[]) => {
 };
 
 const MovieInfo = ({
-  baseUrl,
+  baseImageUrl,
   credits,
   genres,
   homepage,
@@ -95,7 +97,7 @@ const MovieInfo = ({
           {posterPath === null ? (
             <Poster imageUrl={missingPoster} alt={title} />
           ) : (
-            <Poster imageUrl={`${baseUrl}w780${posterPath}`} alt={title} />
+            <Poster imageUrl={`${baseImageUrl}w780${posterPath}`} alt={title} />
           )}
         </div>
         <div className="xl:w-65">
@@ -165,6 +167,7 @@ const MovieInfo = ({
                 url={homepage}
                 styleLight={false}
                 endIcon={<FaExternalLinkAlt />}
+                externalLink={true}
               >
                 Website
               </ButtonLinkPrimary>
@@ -174,6 +177,7 @@ const MovieInfo = ({
                 url={`https://www.imdb.com/title/${imdbId}`}
                 styleLight={false}
                 endIcon={<BiMovie />}
+                externalLink={true}
               >
                 IMDB
               </ButtonLinkPrimary>
@@ -190,6 +194,7 @@ const MovieInfo = ({
                       key={filteredVideo.id}
                       styleLight={false}
                       endIcon={<FaPlay />}
+                      externalLink={true}
                     >
                       Trailer
                     </ButtonLinkPrimary>
@@ -209,7 +214,11 @@ const MovieInfo = ({
         >
           <h3 className="text-24 font-bold uppercase mb-44">Top Cast:</h3>
           <div className="flex flex-col items-center">
-            <CastList cast={credits.cast} baseUrl={baseUrl} imdbId={imdbId} />
+            <CastList
+              cast={credits.cast}
+              baseImageUrl={baseImageUrl}
+              imdbId={imdbId}
+            />
             {imdbId === null ? null : (
               <ButtonLinkTertiary
                 url={`https://www.imdb.com/title/${imdbId}/fullcredits/?ref_=tt_cl_sm`}
@@ -225,7 +234,7 @@ const MovieInfo = ({
           <h2 className="text-24 font-bold uppercase mb-44">
             Recommended Movies
           </h2>
-          <MovieList movies={recommendations.results} baseUrl={baseUrl} />
+          <MovieList movies={recommendations} baseImageUrl={baseImageUrl} />
         </section>
       )}
     </div>
