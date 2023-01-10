@@ -75,6 +75,7 @@ Primary.args = {
     "Renegade bounty hunter Ryan Swan must carve his way through the Hawaiian crime world to wreak vengeance on the kingpin who murdered his father.",
   posterPath: null,
   recommendations: {
+    page: 1,
     results: [
       {
         id: 1,
@@ -113,6 +114,7 @@ Primary.args = {
         vote_average: 7,
       },
     ],
+    total_pages: 20,
   },
   releaseDate: "2022-11-11",
   runtime: 93,
