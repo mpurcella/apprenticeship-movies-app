@@ -1,4 +1,4 @@
-export type Config = { baseUrl: string };
+export type Config = { baseImageUrl: string };
 
 export type SpokenLanguage = {
   english_name: string;
@@ -10,11 +10,15 @@ export type Genre = {
   name: string;
 };
 
-export type Movie = {
-  id: number;
-  title: string;
-  poster_path: string | null;
-  vote_average: number;
+export type Movies = {
+  page: number;
+  results: Array<{
+    id: number;
+    title: string;
+    poster_path: string | null;
+    vote_average: number;
+  }>;
+  total_pages: number;
 };
 
 export type MovieDetails = {
@@ -35,12 +39,14 @@ export type MovieDetails = {
   overview: string | null;
   poster_path: string | null;
   recommendations: {
+    page: number;
     results: Array<{
       id: number;
       poster_path: string | null;
       title: string;
       vote_average: number;
     }>;
+    total_pages: number;
   };
   release_date: string;
   runtime: number | null;
