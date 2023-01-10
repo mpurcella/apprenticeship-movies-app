@@ -18,6 +18,7 @@ PrimaryLightStart.args = {
   children: "ButtonLink",
   startIcon: <FaPlay />,
   styleLight: true,
+  externalLink: false,
 };
 
 export const PrimaryLightEnd = Template.bind({});
@@ -26,6 +27,7 @@ PrimaryLightEnd.args = {
   children: "ButtonLink",
   endIcon: <FaPlay />,
   styleLight: true,
+  externalLink: false,
 };
 
 export const PrimaryDarkStart = Template.bind({});
@@ -34,6 +36,7 @@ PrimaryDarkStart.args = {
   children: "ButtonLink",
   startIcon: <FaPlay />,
   styleLight: false,
+  externalLink: false,
 };
 
 export const PrimaryDarkEnd = Template.bind({});
@@ -42,4 +45,5 @@ PrimaryDarkEnd.args = {
   children: "ButtonLink",
   endIcon: <FaPlay />,
   styleLight: false,
+  externalLink: true,
 };
