@@ -8,7 +8,7 @@ type Store = {
 
 export const StoreCtx = createContext<Store>({
   genres: [],
-  config: { baseUrl: "" },
+  config: { baseImageUrl: "" },
 });
 
 export function useStore() {
